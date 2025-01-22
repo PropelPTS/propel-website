@@ -1,0 +1,152 @@
+/* Reset default styles */
+:root {
+  --logo-red: #E31837;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.App {
+  text-align: left;
+  min-height: 100vh;
+}
+
+/* Navigation styles */
+.logo-link {
+  text-decoration: none;
+  display: inline-block;
+  padding: 0;
+  overflow: visible;
+}
+
+.MuiToolbar-root {
+  min-height: 140px !important;
+  padding: 0 !important;
+  overflow: visible;
+}
+
+.logo-link img {
+  transition: transform 0.2s ease-in-out;
+  max-width: none;
+  transform-origin: left center;
+}
+
+.logo-link:hover img {
+  transform: scale(1.25);
+}
+
+/* Adjust container for larger logo */
+.MuiContainer-root {
+  overflow: visible;
+}
+
+/* Hero section styles */
+.hero-section {
+  background: linear-gradient(135deg, #1A1A1A 0%, #000000 100%);
+  padding: 80px 0;
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+}
+
+.hero-section h1,
+.hero-section h2,
+.hero-section p {
+  color: #FFFFFF;
+}
+
+/* Page header styles */
+.page-header {
+  background: linear-gradient(135deg, #1A1A1A 0%, #000000 100%);
+  padding: 60px 0;
+  text-align: center;
+  color: #FFFFFF;
+}
+
+.page-header h1,
+.page-header h2 {
+  color: #FFFFFF;
+}
+
+/* Card styles */
+.service-card,
+.feature-card,
+.team-member-card,
+.service-detail-card {
+  border: 1px solid rgba(227, 24, 55, 0.1);
+  transition: transform 0.2s ease-in-out, border-color 0.2s ease-in-out;
+}
+
+.service-card:hover,
+.feature-card:hover,
+.team-member-card:hover,
+.service-detail-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--logo-red);
+}
+
+/* Footer styles */
+.footer {
+  background-color: #1A1A1A;
+  color: #FFFFFF;
+  padding: 40px 0;
+  margin-top: 80px;
+}
+
+.footer .MuiTypography-root {
+  color: #FFFFFF;
+}
+
+/* Section backgrounds */
+.services-section,
+.cta-section {
+  background-color: #F5F5F5;
+}
+
+.why-choose-section,
+.mission-section {
+  background-color: #FFFFFF;
+}
+
+/* Contact form styles */
+.contact-section form {
+  background: #FFFFFF;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(227, 24, 55, 0.1);
+}
+
+/* List styles */
+.service-detail-card ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.service-detail-card li {
+  margin-bottom: 0.5rem;
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+.service-detail-card li:before {
+  content: "•";
+  color: var(--logo-red);
+  position: absolute;
+  left: 0;
+}
+
+/* Responsive styles */
+@media (max-width: 600px) {
+  .page-header {
+    padding: 40px 0;
+  }
+
+  .footer {
+    padding: 20px 0;
+    margin-top: 40px;
+  }
+}
