@@ -1,5 +1,6 @@
 import React from 'react';
 import { Container, Grid, Typography, Box } from '@mui/material';
+import headshot2 from '../assets/images/Headshot2.png';
 
 function About() {
   return (
@@ -23,7 +24,7 @@ function About() {
                 <Box sx={{ flex: { xs: '1', md: '0 0 300px' } }}>
                   <Box
                     component="img"
-                    src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=400"
+                    src={headshot2}
                     alt="Joshua Lyon, PT, DPT"
                     sx={{ 
                       width: '100%',
