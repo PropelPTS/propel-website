@@ -103,7 +103,7 @@ function Contact() {
                 <Box sx={{ display: 'flex', alignItems: 'center', mb: 3 }}>
                   <PhoneIcon sx={{ mr: 2, color: 'primary.main' }} />
                   <Typography>
-                    (555) 123-4567
+                    (216) 714-3271
                   </Typography>
                 </Box>
                 <Box sx={{ display: 'flex', alignItems: 'center', mb: 3 }}>

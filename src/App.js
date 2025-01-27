@@ -71,7 +71,7 @@ function App() {
                       objectPosition: 'left center',
                       transform: 'scale(1.2)',
                       transformOrigin: 'left center',
-                      filter: 'brightness(0) saturate(100%) invert(12%) sepia(100%) saturate(5840%) hue-rotate(356deg) brightness(103%) contrast(115%)'
+                      filter: 'brightness(0) invert(1)'
                     }}
                   />
                   <Typography variant="body2">
@@ -85,7 +85,7 @@ function App() {
                   <Typography variant="body2">
                     351 Cypress Creek Road, #203<br />
                     Cedar Park, TX 78613<br />
-                    Phone: (555) 123-4567<br />
+                    Phone: (216) 714-3271<br />
                     Email: admin@propelpts.com
                   </Typography>
                 </Grid>

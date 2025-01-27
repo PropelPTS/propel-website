@@ -16,7 +16,7 @@ function Home() {
           <Grid container spacing={4} alignItems="center" sx={{ minHeight: '80vh' }}>
             <Grid item xs={12} md={6}>
               <Typography variant="h2" component="h1" gutterBottom>
-                Expert Physical Therapy Care
+                Expert Physical Therapy Care in Austin
               </Typography>
               <Typography variant="h5" component="h2" gutterBottom>
                 Personalized treatment plans to help you move better, feel better, and live better.
