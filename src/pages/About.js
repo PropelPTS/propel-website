@@ -44,6 +44,9 @@ function About() {
                   <Typography paragraph>
                     Joshua is the practice owner of Propel Physical Therapy and brings extensive experience as a clinician, clinic director, and former Director of Physical Therapy for a multi-site, multi-state organization. Over the course of his career, he has cultivated a passion for delivering exceptional patient care while mentoring and empowering fellow therapists to reach their full potential. Now, he has embarked on an endeavor to refine and hone his skills by establishing his own practice. In this journey, Joshua is committed to creating an environment where patients are at the center of care, and physical therapists are equipped to thrive professionally and personally.
                   </Typography>
+                  <Typography paragraph>
+                    Prior to his career in physical therapy, Joshua proudly served in the United States Marine Corps. His military experience instilled in him the core values of dedication, discipline, and service to others - values that he brings to his practice every day. Following his military service, Joshua pursued his passion for helping others by earning his Doctorate in Physical Therapy.
+                  </Typography>
                   <Typography>
                     Outside the clinic, Joshua enjoys exploring the vibrant outdoor scene in Austin, from hiking trails to local parks. He also has a passion for travel, working out, and volunteering at his local church. When not immersed in these activities, he cherishes quality time with his wife, Kimberly, and their four children.
                   </Typography>

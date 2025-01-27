@@ -1,6 +1,9 @@
 import React from 'react';
 import { Container, Grid, Typography, Box, Button } from '@mui/material';
 import { Link } from 'react-router-dom';
+import painManagement from '../assets/images/Pain Management.jpg';
+import concussion from '../assets/images/Concussion.jpg';
+import pelvic2 from '../assets/images/Pelvic2.jpg';
 
 function Services() {
   const services = [
@@ -14,19 +17,13 @@ function Services() {
       title: "Pelvic Floor Therapy",
       description: "Our specialized pelvic floor physical therapy helps address various conditions affecting the pelvic region. We provide compassionate, individualized care in a comfortable and private setting.",
       details: ["Pregnancy & postpartum care", "Incontinence treatment", "Pelvic pain management", "Core strengthening"],
-      image: "https://images.unsplash.com/photo-1609859682322-c2002269428d?auto=format&fit=crop&w=400"
+      image: pelvic2
     },
     {
       title: "Sports Rehabilitation",
       description: "Get back in the game with our specialized sports rehabilitation programs. We work with athletes of all levels to restore function, improve performance, and prevent future injuries.",
       details: ["Sport-specific training", "Return-to-play programs", "Performance enhancement", "Injury prevention"],
       image: "https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?auto=format&fit=crop&w=400"
-    },
-    {
-      title: "Orthopedic Therapy",
-      description: "Our orthopedic therapy services focus on treating musculoskeletal injuries and conditions affecting bones, muscles, ligaments, and tendons.",
-      details: ["Joint replacement rehab", "Spine care", "Arthritis management", "Post-fracture care"],
-      image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=400"
     },
     {
       title: "Massage Therapy",
@@ -38,12 +35,13 @@ function Services() {
       title: "Vestibular Therapy",
       description: "Regain your balance and confidence with our vestibular rehabilitation programs. We specialize in treating dizziness, vertigo, and balance disorders.",
       details: ["Balance training", "Gaze stabilization", "Positional vertigo treatment", "Fall prevention"],
-      image: "https://images.unsplash.com/photo-1541199249251-f713e6145474?auto=format&fit=crop&w=400"
+      image: concussion
     },
     {
       title: "Pain Management",
       description: "Take control of your pain with our comprehensive pain management solutions. We use a combination of techniques to help you find relief and improve function.",
-      details: ["Chronic pain treatment", "Joint pain relief", "Back pain management", "Therapeutic modalities"]
+      details: ["Chronic pain treatment", "Joint pain relief", "Back pain management", "Therapeutic modalities"],
+      image: painManagement
     }
   ];
 
@@ -74,6 +72,7 @@ function Services() {
                       width: '100%',
                       height: '250px',
                       objectFit: 'cover',
+                      objectPosition: 'top',
                       borderRadius: 2,
                       mb: 3,
                     }}
