@@ -126,16 +126,6 @@ function Contact() {
                   </Box>
                 </Box>
               </Box>
-
-              <Box sx={{ mt: 6 }}>
-                <Typography variant="h5" gutterBottom>
-                  Emergency?
-                </Typography>
-                <Typography variant="body1" paragraph>
-                  If you're experiencing a medical emergency, please call 911 or visit 
-                  the nearest emergency room.
-                </Typography>
-              </Box>
             </Grid>
           </Grid>
         </Container>
