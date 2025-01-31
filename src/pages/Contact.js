@@ -28,10 +28,10 @@ function Contact() {
     event.preventDefault();
 
     emailjs.sendForm(
-      'YOUR_SERVICE_ID', // You'll need to replace this with your EmailJS service ID
-      'YOUR_TEMPLATE_ID', // You'll need to replace this with your EmailJS template ID
+      'service_1a45ox5',
+      'template_es6h8hb',
       form.current,
-      'YOUR_PUBLIC_KEY' // You'll need to replace this with your EmailJS public key
+      'ypihJm0kKMIb5onu7'
     )
       .then((result) => {
         console.log('Email sent successfully:', result.text);
