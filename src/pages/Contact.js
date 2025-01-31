@@ -1,14 +1,56 @@
-import React from 'react';
-import { Container, Grid, Typography, Box, TextField, Button } from '@mui/material';
+import React, { useState, useRef } from 'react';
+import { Container, Grid, Typography, Box, TextField, Button, Alert, Snackbar } from '@mui/material';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import PhoneIcon from '@mui/icons-material/Phone';
 import EmailIcon from '@mui/icons-material/Email';
 import AccessTimeIcon from '@mui/icons-material/AccessTime';
+import emailjs from '@emailjs/browser';
 
 function Contact() {
+  const form = useRef();
+  const [showConfirmation, setShowConfirmation] = useState(false);
+  const [formData, setFormData] = useState({
+    fullName: '',
+    email: '',
+    phone: '',
+    message: ''
+  });
+
+  const handleInputChange = (event) => {
+    const { name, value } = event.target;
+    setFormData(prevState => ({
+      ...prevState,
+      [name]: value
+    }));
+  };
+
   const handleSubmit = (event) => {
     event.preventDefault();
-    // Handle form submission
+
+    emailjs.sendForm(
+      'YOUR_SERVICE_ID', // You'll need to replace this with your EmailJS service ID
+      'YOUR_TEMPLATE_ID', // You'll need to replace this with your EmailJS template ID
+      form.current,
+      'YOUR_PUBLIC_KEY' // You'll need to replace this with your EmailJS public key
+    )
+      .then((result) => {
+        console.log('Email sent successfully:', result.text);
+        setShowConfirmation(true);
+        // Reset form
+        setFormData({
+          fullName: '',
+          email: '',
+          phone: '',
+          message: ''
+        });
+      })
+      .catch((error) => {
+        console.error('Error sending email:', error.text);
+      });
+  };
+
+  const handleCloseConfirmation = () => {
+    setShowConfirmation(false);
   };
 
   return (
@@ -35,14 +77,17 @@ function Contact() {
                 Have questions about our services? Ready to schedule an appointment? 
                 Fill out the form below and we'll get back to you as soon as possible.
               </Typography>
-              <Box component="form" onSubmit={handleSubmit} sx={{ mt: 4 }}>
+              <Box component="form" ref={form} onSubmit={handleSubmit} sx={{ mt: 4 }}>
                 <Grid container spacing={2}>
                   <Grid item xs={12}>
                     <TextField
                       required
                       fullWidth
                       label="Full Name"
+                      name="fullName"
                       variant="outlined"
+                      value={formData.fullName}
+                      onChange={handleInputChange}
                     />
                   </Grid>
                   <Grid item xs={12}>
@@ -50,8 +95,11 @@ function Contact() {
                       required
                       fullWidth
                       label="Email"
+                      name="email"
                       type="email"
                       variant="outlined"
+                      value={formData.email}
+                      onChange={handleInputChange}
                     />
                   </Grid>
                   <Grid item xs={12}>
@@ -59,7 +107,10 @@ function Contact() {
                       required
                       fullWidth
                       label="Phone"
+                      name="phone"
                       variant="outlined"
+                      value={formData.phone}
+                      onChange={handleInputChange}
                     />
                   </Grid>
                   <Grid item xs={12}>
@@ -67,9 +118,12 @@ function Contact() {
                       required
                       fullWidth
                       label="Message"
+                      name="message"
                       multiline
                       rows={4}
                       variant="outlined"
+                      value={formData.message}
+                      onChange={handleInputChange}
                     />
                   </Grid>
                   <Grid item xs={12}>
@@ -130,6 +184,17 @@ function Contact() {
           </Grid>
         </Container>
       </section>
+
+      <Snackbar
+        open={showConfirmation}
+        autoHideDuration={6000}
+        onClose={handleCloseConfirmation}
+        anchorOrigin={{ vertical: 'bottom', horizontal: 'center' }}
+      >
+        <Alert onClose={handleCloseConfirmation} severity="success" sx={{ width: '100%' }}>
+          Thank you for your message! We'll get back to you soon.
+        </Alert>
+      </Snackbar>
     </div>
   );
 }
