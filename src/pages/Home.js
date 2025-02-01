@@ -185,14 +185,37 @@ function Home() {
         </Container>
       </section>
 
-      <section className="why-choose-section">
-        <Container sx={{ py: 8 }}>
-          <Typography variant="h3" component="h2" textAlign="center" gutterBottom>
+      <section className="why-choose-section" sx={{ backgroundColor: '#f8f9fa' }}>
+        <Container sx={{ py: { xs: 4, md: 8 } }}>
+          <Typography 
+            variant="h3" 
+            component="h2" 
+            gutterBottom
+            sx={{
+              fontSize: { xs: '2rem', md: '3rem' },
+              textAlign: 'center',
+              mb: { xs: 3, md: 4 }
+            }}
+          >
             Why Choose Us
           </Typography>
-          <Grid container spacing={4} sx={{ mt: 4 }} justifyContent="center">
+          <Grid 
+            container 
+            spacing={{ xs: 3, md: 4 }} 
+            sx={{ mt: { xs: 1, md: 2 } }}
+          >
             <Grid item xs={12} md={6}>
-              <Box className="feature-card">
+              <Box 
+                className="feature-card"
+                sx={{
+                  height: '100%',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  alignItems: { xs: 'center', md: 'flex-start' },
+                  textAlign: { xs: 'center', md: 'left' },
+                  p: { xs: 2, md: 3 }
+                }}
+              >
                 <Box
                   component="img"
                   src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=400"
@@ -202,19 +225,36 @@ function Home() {
                     height: '200px',
                     objectFit: 'cover',
                     borderRadius: 2,
-                    mb: 2,
+                    mb: 3,
                   }}
                 />
-                <Typography variant="h5" gutterBottom>
+                <Typography 
+                  variant="h5" 
+                  gutterBottom
+                  sx={{
+                    fontSize: { xs: '1.5rem', md: '1.75rem' },
+                    mb: 2
+                  }}
+                >
                   Expert Care
                 </Typography>
-                <Typography>
+                <Typography sx={{ mb: { xs: 3, md: 4 } }}>
                   Our experienced therapists provide personalized attention and evidence-based treatment.
                 </Typography>
               </Box>
             </Grid>
             <Grid item xs={12} md={6}>
-              <Box className="feature-card">
+              <Box 
+                className="feature-card"
+                sx={{
+                  height: '100%',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  alignItems: { xs: 'center', md: 'flex-start' },
+                  textAlign: { xs: 'center', md: 'left' },
+                  p: { xs: 2, md: 3 }
+                }}
+              >
                 <Box
                   component="img"
                   src={highlyTrained}
@@ -225,13 +265,20 @@ function Home() {
                     objectFit: 'cover',
                     objectPosition: 'top',
                     borderRadius: 2,
-                    mb: 2,
+                    mb: 3,
                   }}
                 />
-                <Typography variant="h5" gutterBottom>
+                <Typography 
+                  variant="h5" 
+                  gutterBottom
+                  sx={{
+                    fontSize: { xs: '1.5rem', md: '1.75rem' },
+                    mb: 2
+                  }}
+                >
                   Highly Trained
                 </Typography>
-                <Typography>
+                <Typography sx={{ mb: { xs: 3, md: 4 } }}>
                   Our physical therapists maintain the highest levels of certification and stay current with the latest treatment techniques.
                 </Typography>
               </Box>
