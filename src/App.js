@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
-import { ThemeProvider, AppBar, Container, Toolbar, Typography, Button, Box, IconButton, Menu, MenuItem, useTheme, useMediaQuery, Grid } from '@mui/material';
+import { ThemeProvider, AppBar, Container, Toolbar, Typography, Button, Box, IconButton, Menu, MenuItem, useMediaQuery, Grid } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import Home from './pages/Home';
 import About from './pages/About';
