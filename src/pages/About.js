@@ -7,45 +7,89 @@ function About() {
     <div>
       <section className="page-header">
         <Container>
-          <Typography variant="h2" component="h1" gutterBottom>
+          <Typography 
+            variant="h2" 
+            component="h1" 
+            gutterBottom
+            sx={{
+              fontSize: { xs: '2.5rem', md: '3.75rem' },
+              textAlign: { xs: 'center', md: 'left' }
+            }}
+          >
             Meet Our Team
           </Typography>
-          <Typography variant="h5" component="h2" gutterBottom>
+          <Typography 
+            variant="h5" 
+            component="h2" 
+            gutterBottom
+            sx={{
+              fontSize: { xs: '1.25rem', md: '1.5rem' },
+              textAlign: { xs: 'center', md: 'left' }
+            }}
+          >
             Dedicated professionals committed to your recovery and wellness
           </Typography>
         </Container>
       </section>
 
       <section className="team-section">
-        <Container sx={{ py: 8 }}>
-          <Grid container spacing={6}>
+        <Container sx={{ py: { xs: 4, md: 8 } }}>
+          <Grid container spacing={4}>
             <Grid item xs={12}>
-              <Box className="team-member-card" sx={{ display: 'flex', flexDirection: { xs: 'column', md: 'row' }, gap: 4, p: 4 }}>
-                <Box sx={{ flex: { xs: '1', md: '0 0 300px' } }}>
+              <Box 
+                className="team-member-card" 
+                sx={{ 
+                  display: 'flex', 
+                  flexDirection: { xs: 'column', md: 'row' }, 
+                  gap: { xs: 3, md: 4 }, 
+                  p: { xs: 2, md: 4 },
+                  alignItems: { xs: 'center', md: 'flex-start' }
+                }}
+              >
+                <Box sx={{ 
+                  width: { xs: '100%', md: '300px' },
+                  maxWidth: { xs: '300px', md: '100%' }
+                }}>
                   <Box
                     component="img"
                     src={headshot2}
                     alt="Joshua Lyon, PT, DPT"
                     sx={{ 
                       width: '100%',
-                      height: '400px',
+                      height: { xs: '300px', md: '400px' },
                       objectFit: 'cover',
                       borderRadius: 2
                     }}
                   />
                 </Box>
-                <Box sx={{ flex: '1' }}>
-                  <Typography variant="h4" gutterBottom>
+                <Box sx={{ 
+                  flex: '1',
+                  textAlign: { xs: 'center', md: 'left' }
+                }}>
+                  <Typography 
+                    variant="h4" 
+                    gutterBottom
+                    sx={{
+                      fontSize: { xs: '1.75rem', md: '2.125rem' }
+                    }}
+                  >
                     Joshua Lyon
                   </Typography>
-                  <Typography variant="h6" color="primary" gutterBottom>
-                    PT, DPT
+                  <Typography 
+                    variant="h6" 
+                    color="primary" 
+                    gutterBottom
+                    sx={{
+                      fontSize: { xs: '1.1rem', md: '1.25rem' }
+                    }}
+                  >
+                    PT, DPT - Owner & Physical Therapist
                   </Typography>
                   <Typography paragraph>
-                    Joshua is the practice owner of Propel Physical Therapy and brings extensive experience as a clinician, clinic director, and former Director of Physical Therapy for a multi-site, multi-state organization. Over the course of his career, he has cultivated a passion for delivering exceptional patient care while mentoring and empowering fellow therapists to reach their full potential. Now, he has embarked on an endeavor to refine and hone his skills by establishing his own practice. In this journey, Joshua is committed to creating an environment where patients are at the center of care, and physical therapists are equipped to thrive professionally and personally.
+                    Joshua Lyon is a dedicated physical therapist with extensive experience in orthopedic and sports rehabilitation. He earned his Doctorate in Physical Therapy and has since been committed to providing exceptional care to patients of all ages and abilities.
                   </Typography>
                   <Typography paragraph>
-                    Prior to his career in physical therapy, Joshua proudly served in the United States Marine Corps. His military experience instilled in him the core values of dedication, discipline, and service to others - values that he brings to his practice every day. Following his military service, Joshua pursued his passion for helping others by earning his Doctorate in Physical Therapy.
+                    With a strong foundation in evidence-based practice and a patient-centered approach, Joshua specializes in treating a wide range of conditions, from sports injuries to chronic pain management. His expertise includes manual therapy, therapeutic exercise, and movement analysis.
                   </Typography>
                   <Typography>
                     Outside the clinic, Joshua enjoys exploring the vibrant outdoor scene in Austin, from hiking trails to local parks. He also has a passion for travel, working out, and volunteering at his local church. When not immersed in these activities, he cherishes quality time with his wife, Kimberly, and their four children.
@@ -58,10 +102,17 @@ function About() {
       </section>
 
       <section className="mission-section" sx={{ backgroundColor: '#f8f9fa' }}>
-        <Container sx={{ py: 8 }}>
+        <Container sx={{ py: { xs: 4, md: 8 } }}>
           <Grid container spacing={4}>
             <Grid item xs={12} md={6}>
-              <Typography variant="h3" gutterBottom>
+              <Typography 
+                variant="h3" 
+                gutterBottom
+                sx={{
+                  fontSize: { xs: '2rem', md: '3rem' },
+                  textAlign: { xs: 'center', md: 'left' }
+                }}
+              >
                 Our Mission
               </Typography>
               <Typography variant="body1" paragraph>
@@ -70,13 +121,20 @@ function About() {
                 expert clinicians uses evidence-based treatments and personalized approaches to 
                 help you reach your goals.
               </Typography>
-              <Typography variant="body1">
+              <Typography variant="body1" sx={{ mb: { xs: 4, md: 0 } }}>
                 We believe in creating a supportive and motivating environment where patients 
                 can heal, strengthen, and return to their active lifestyles with confidence.
               </Typography>
             </Grid>
             <Grid item xs={12} md={6}>
-              <Typography variant="h3" gutterBottom>
+              <Typography 
+                variant="h3" 
+                gutterBottom
+                sx={{
+                  fontSize: { xs: '2rem', md: '3rem' },
+                  textAlign: { xs: 'center', md: 'left' }
+                }}
+              >
                 Our Approach
               </Typography>
               <Typography variant="body1" paragraph>

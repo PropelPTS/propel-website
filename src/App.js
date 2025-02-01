@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
-import { AppBar, Toolbar, Typography, Button, Container, Box, Grid } from '@mui/material';
-import { ThemeProvider } from '@mui/material/styles';
+import { ThemeProvider, AppBar, Container, Toolbar, Typography, Button, Box, IconButton, Menu, MenuItem, useTheme, useMediaQuery, Grid } from '@mui/material';
+import MenuIcon from '@mui/icons-material/Menu';
 import Home from './pages/Home';
 import About from './pages/About';
 import Services from './pages/Services';
@@ -11,38 +11,90 @@ import logo from './assets/images/logo.png';
 import './App.css';
 
 function App() {
+  const [mobileMenuAnchor, setMobileMenuAnchor] = useState(null);
+  const isMobile = useMediaQuery(theme.breakpoints.down('md'));
+
+  const handleMobileMenuOpen = (event) => {
+    setMobileMenuAnchor(event.currentTarget);
+  };
+
+  const handleMobileMenuClose = () => {
+    setMobileMenuAnchor(null);
+  };
+
   return (
     <ThemeProvider theme={theme}>
       <Router>
         <div className="App">
           <AppBar position="static" elevation={0}>
             <Container>
-              <Toolbar>
-                <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+              <Toolbar sx={{ justifyContent: 'space-between', padding: { xs: '0.5rem 0', md: 0 } }}>
+                <Typography variant="h6" component="div">
                   <Link to="/" className="logo-link">
                     <Box
                       component="img"
                       src={logo}
                       alt="Propel PT Logo"
                       sx={{
-                        height: '160px',
+                        height: { xs: '100px', md: '160px' },
                         width: 'auto',
                         display: 'block',
                         objectFit: 'contain',
                         objectPosition: 'left center',
-                        margin: '-30px 0',
-                        transform: 'scale(1.2)',
+                        margin: { xs: '-15px 0', md: '-30px 0' },
+                        transform: { xs: 'scale(1)', md: 'scale(1.2)' },
                         transformOrigin: 'left center'
                       }}
                     />
                   </Link>
                 </Typography>
-                <Box sx={{ display: 'flex', gap: 2 }}>
-                  <Button color="inherit" component={Link} to="/">Home</Button>
-                  <Button color="inherit" component={Link} to="/about">About Us</Button>
-                  <Button color="inherit" component={Link} to="/services">Services</Button>
-                  <Button color="inherit" component={Link} to="/contact">Contact</Button>
-                </Box>
+
+                {isMobile ? (
+                  <>
+                    <IconButton
+                      edge="end"
+                      color="inherit"
+                      aria-label="menu"
+                      onClick={handleMobileMenuOpen}
+                    >
+                      <MenuIcon />
+                    </IconButton>
+                    <Menu
+                      anchorEl={mobileMenuAnchor}
+                      open={Boolean(mobileMenuAnchor)}
+                      onClose={handleMobileMenuClose}
+                      sx={{
+                        '& .MuiPaper-root': {
+                          width: '100%',
+                          maxWidth: '100%',
+                          left: '0 !important',
+                          right: '0',
+                          marginTop: '0.5rem'
+                        }
+                      }}
+                    >
+                      <MenuItem onClick={handleMobileMenuClose} component={Link} to="/">
+                        Home
+                      </MenuItem>
+                      <MenuItem onClick={handleMobileMenuClose} component={Link} to="/about">
+                        About Us
+                      </MenuItem>
+                      <MenuItem onClick={handleMobileMenuClose} component={Link} to="/services">
+                        Services
+                      </MenuItem>
+                      <MenuItem onClick={handleMobileMenuClose} component={Link} to="/contact">
+                        Contact
+                      </MenuItem>
+                    </Menu>
+                  </>
+                ) : (
+                  <Box sx={{ display: 'flex', gap: 2 }}>
+                    <Button color="inherit" component={Link} to="/">Home</Button>
+                    <Button color="inherit" component={Link} to="/about">About Us</Button>
+                    <Button color="inherit" component={Link} to="/services">Services</Button>
+                    <Button color="inherit" component={Link} to="/contact">Contact</Button>
+                  </Box>
+                )}
               </Toolbar>
             </Container>
           </AppBar>
